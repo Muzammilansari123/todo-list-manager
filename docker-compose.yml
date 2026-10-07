@@ -14,6 +14,7 @@ services:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
     depends_on:
       - todo-app
+      
 
   grafana:
     image: grafana/grafana:latest

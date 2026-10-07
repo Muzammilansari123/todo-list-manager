@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>My To-Do List</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <main class="app">
+
+        <header class="header">
+
+            <div class="logo">
+
+                <div class="logo-icon">
+                    ✓
+                </div>
+
+                <div>
+                    <h1>My To-Do List</h1>
+
+                    <p>
+                        Stay organized. Get things done.
+                    </p>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <div class="add-box">
+
+            <input
+                id="taskInput"
+                type="text"
+                placeholder="What do you need to do?"
+                autocomplete="off"
+            >
+
+            <button onclick="addTask()">
+                Add Task
+            </button>
+
+        </div>
+
+
+        <div class="summary">
+
+            <div class="summary-card pending-summary">
+
+                <div>
+                    <div class="summary-label">
+                        Pending
+                    </div>
+
+                    <div
+                        class="summary-number"
+                        id="pendingCount">
+                        0
+                    </div>
+                </div>
+
+                <span class="summary-icon">
+                    ○
+                </span>
+
+            </div>
+
+
+            <div class="summary-card completed-summary">
+
+                <div>
+                    <div class="summary-label">
+                        Completed
+                    </div>
+
+                    <div
+                        class="summary-number"
+                        id="completedCount">
+                        0
+                    </div>
+                </div>
+
+                <span class="summary-icon">
+                    ✓
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <section class="task-section">
+
+            <div class="section-title">
+
+                <h2>Pending Tasks</h2>
+
+                <span id="pendingBadge">
+                    0 tasks
+                </span>
+
+            </div>
+
+            <div id="pendingTasks"></div>
+
+        </section>
+
+
+        <section class="task-section">
+
+            <div class="section-title">
+
+                <h2>Completed Tasks</h2>
+
+                <span id="completedBadge">
+                    0 tasks
+                </span>
+
+            </div>
+
+            <div id="completedTasks"></div>
+
+        </section>
+
+
+        <footer>
+
+            To-Do List Manager
+            <span>•</span>
+            Flask + Prometheus
+
+        </footer>
+
+    </main>
+
+
+    <script src="{{ url_for('static', filename='script.js') }}">
+    </script>
+
+</body>
+
+</html>
